@@ -170,30 +170,40 @@ header {
   display: flex;
   gap: 20px;
   justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Base común para ambos botones para asegurar simetría */
+.btn-negro-oro, .btn-minimal {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  padding: 15px 10px; 
+  min-height: 65px;
+  
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: 0.4s;
+  text-decoration: none;
 }
 
 .btn-negro-oro {
   background-color: #1a1a1a;
   color: #ffffff !important;
-  padding: 18px 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  transition: 0.4s;
   border: 1px solid #1a1a1a;
 }
 
 .btn-minimal {
-  padding: 18px 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.7rem;
-  font-weight: 600;
   color: #1a1a1a !important;
   border: 1px solid #1a1a1a;
   background: transparent;
-  transition: 0.4s;
 }
 
 .btn-negro-oro:hover {
@@ -214,6 +224,16 @@ header {
   }
   .titulo-villarrica {
     font-size: 2.2rem;
+  }
+  /* Asegura que los botones no se peguen a los bordes de la pantalla */
+  .botones-luxury {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .btn-negro-oro, .btn-minimal {
+    font-size: 0.65rem;
+    padding: 10px 5px;
   }
 }
 
@@ -288,17 +308,20 @@ article .info-texto h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   color: var(--dorado);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  line-height: 1.2;
 }
 
+/* El texto "Cuenta con:" */
 .info-texto p {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #888;
   font-weight: 700;
 }
 
+/* La lista de características */
 .info-texto ul {
   list-style: none;
   margin-top: 20px;
@@ -679,156 +702,142 @@ background-color: rgba(197, 160, 89, 0.2); /* Fondo dorado suave al hover */
 }
 
 /* ==========================================================================
-   SECCIÓN: UBICACIÓN (Dark Luxury Style)
+   SECCIÓN: UBICACIÓN (Versión Final Corregida)
    ========================================================================== */
 
 .Ubicacion {
   padding: 100px 20px;
-  background-color: #111111;
-  margin: 0;
+  background-color: #111111; /* Fondo de la sección */
 }
 
-/* --- Títulos de la Sección Ubicación --- */
-.Ubicacion .titulo-seccion {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.Ubicacion .titulo-seccion span {
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 5px;
-  color: #c5a059;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
+/* Título de la sección (ENCUÉNTRANOS / Ubicación Privilegiada) */
 .Ubicacion .titulo-seccion h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  color: #ffffff;
-  margin: 15px 0;
+  color: #ffffff !important; /* Fuerza el blanco */
 }
 
-/* --- Contenedor Principal (Tarjeta de Mapa) --- */
 .seccion-ubicacion {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  gap: 60px;
-  align-items: center;
-  background: #1a1a1a;
-  padding: 50px;
+  gap: 50px;
+  align-items: stretch;
+  background: #1a1a1a; /* Fondo de la tarjeta */
+  padding: 40px;
   border-radius: 15px;
   border: 1px solid rgba(197, 160, 89, 0.2);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
 }
 
-/* --- Bloque de Información Izquierda --- */
 .informacion-ubicacion {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Título interno (Villarrica, Chile) */
 .informacion-ubicacion h2.titulo-elegante {
   font-family: 'Playfair Display', serif;
-  color: #c5a059;
+  color: #c5a059 !important; /* Dorado */
   font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.informacion-ubicacion .direccion-texto {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.informacion-ubicacion p {
-  font-size: 1.1rem;
-  color: #ccc;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.informacion-ubicacion i {
-  color: #c5a059;
-  margin-right: 10px;
-}
-
-.informacion-ubicacion hr {
-  border: 0;
-  border-top: 1px solid rgba(197, 160, 89, 0.3);
-  margin-bottom: 30px;
-}
-
-.informacion-ubicacion ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 30px;
-}
-
-.informacion-ubicacion li {
-  margin-bottom: 12px;
-  color: #2d3748;
-}
-
-/* --- Botón "Cómo Llegar" --- */
+/* Estilos del Botón Reintegrados */
 .boton-como-llegar {
   display: inline-block;
   padding: 15px 35px;
   background-color: transparent;
-  color: #c5a059;
+  color: #c5a059 !important;
   text-decoration: none;
   border: 1px solid #c5a059;
   border-radius: 8px;
-  font-weight: bold;letter-spacing: 2px;
+  font-weight: bold;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 0.8rem;
   transition: all 0.3s ease;
+  width: fit-content;
+  margin-top: 20px;
 }
 
 .boton-como-llegar:hover {
   background-color: #c5a059;
-  color: #111111;
+  color: #111111 !important;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
 }
 
-/* --- Bloque del Mapa --- */
+/* --- Puntos de Interés --- */
+.datos-interes h3 {
+  font-family: 'Playfair Display', serif;
+  color: #c5a059;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.item-interes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.item-interes i {
+  color: #c5a059;
+  font-size: 1.3rem;
+}
+
+.item-interes p {
+  color: #cccccc;
+  font-size: 0.95rem;
+  margin: 0 !important;
+}
+
+.item-interes strong {
+  color: #ffffff;
+}
+
+/* Mapa */
 .mapa-iframe {
-  flex: 1.5;
-  border-radius: 15px;
+  flex: 1.2;
+  border-radius: 12px;
   overflow: hidden;
-  line-height: 0;
   border: 1px solid rgba(197, 160, 89, 0.3);
-  filter: grayscale(0.2) contrast(1.1);
 }
 
 .mapa-iframe iframe {
-  width: 100% !important;
-  height: 450px !important;
-  border: none;
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
   display: block;
 }
 
-/* --- Ajustes Responsive para Ubicación --- */
+/* Responsive */
 @media (max-width: 968px) {
-  .Ubicacion {
-    padding: 60px 20px;
-  }
-
   .seccion-ubicacion {
     flex-direction: column;
     padding: 30px 20px;
-    gap: 40px;
-  }
-
-  .informacion-ubicacion {
     text-align: center;
-    width: 100%;
+  }
+  
+  .item-interes {
+    justify-content: center;
   }
 
-  .informacion-ubicacion h2.titulo-elegante {
-    font-size: 2.2rem;
+  .boton-como-llegar {
+    margin: 20px auto 0;
   }
 
-  .mapa-iframe {
-    width: 100%;
+  .mapa-iframe iframe {
+    min-height: 300px;
   }
 }
 
@@ -888,7 +897,7 @@ background-color: rgba(197, 160, 89, 0.2); /* Fondo dorado suave al hover */
 }
 
 .redes-sociales {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   display: flex;
   gap: 15px;
 }

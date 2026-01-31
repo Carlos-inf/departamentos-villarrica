@@ -54,12 +54,12 @@ departamentos.forEach((depto) => {
     btnLeft.addEventListener("click", moveToLeft);
 
     // Autoplay
-    let autoPlay = setInterval(moveToRight, 5000); // 5 segundos para que de tiempo a ver la foto
+    let autoPlay = setInterval(moveToRight, 3000); // 3 segundos para que de tiempo a ver la foto
 
     // Pausa al pasar el mouse
     contenedor.addEventListener("mouseenter", () => clearInterval(autoPlay));
     contenedor.addEventListener("mouseleave", () => {
-        autoPlay = setInterval(moveToRight, 5000);
+        autoPlay = setInterval(moveToRight, 3000);
     });
 });
 
